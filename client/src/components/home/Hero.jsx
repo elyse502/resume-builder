@@ -17,7 +17,7 @@ const Hero = () => {
       <div className="min-h-screen pb-20">
         {/* Navbar */}
         <nav className="z-50 flex items-center justify-between w-full py-4 px-6 md:px-16 lg:px-24 xl:px-40 text-sm">
-          <a href="https://prebuiltui.com">
+          <a href="#">
             <img src="/logo.svg" alt="logo" className="h-11 w-auto" />
           </a>
 
@@ -31,7 +31,7 @@ const Hero = () => {
             <a href="#testimonials" className="hover:text-green-600 transition">
               Testimonials
             </a>
-            <a href="#contact" className="hover:text-green-600 transition">
+            <a href="#cta" className="hover:text-green-600 transition">
               Contact
             </a>
           </div>
@@ -84,7 +84,7 @@ const Hero = () => {
           <a href="#testimonials" className="text-white">
             Testimonials
           </a>
-          <a href="#contact" className="text-white">
+          <a href="#cta" className="text-white">
             Contact
           </a>
           <button
