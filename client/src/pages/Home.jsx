@@ -1,6 +1,7 @@
 import Banner from "../components/home/Banner";
 import CallToAction from "../components/home/callToAction";
 import Features from "../components/home/Features";
+import Footer from "../components/home/Footer";
 import Hero from "../components/home/Hero";
 import Testimonial from "../components/home/Testimonial";
 
@@ -12,6 +13,7 @@ const Home = () => {
       <Features />
       <Testimonial />
       <CallToAction />
+      <Footer />
     </div>
   );
 };
