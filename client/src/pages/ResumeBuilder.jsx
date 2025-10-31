@@ -26,6 +26,7 @@ import ProjectForm from "../components/ProjectForm";
 import SkillsForm from "../components/SkillsForm";
 import { useSelector } from "react-redux";
 import api from "../configs/api";
+import toast from "react-hot-toast";
 
 const ResumeBuilder = () => {
   const { resumeId } = useParams();
@@ -80,7 +81,23 @@ const ResumeBuilder = () => {
   }, []);
 
   const changeResumeVisibility = async () => {
-    setResumeData({ ...resumeData, public: !resumeData.public });
+    try {
+      const formData = new FormData();
+      formData.append("resumeId", resumeId);
+      formData.append(
+        "resumeData",
+        JSON.stringify({ public: !resumeData.public })
+      );
+
+      const { data } = await api.put("/api/resumes/update", formData, {
+        headers: { Authorization: token },
+      });
+
+      setResumeData({ ...resumeData, public: !resumeData.public });
+      toast.success(data.message);
+    } catch (error) {
+      console.error("Error saving resume:", error);
+    }
   };
 
   const handleShare = () => {
